@@ -1,2 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  let tifu = {
+    title: "Publish Your Blog Wintin Few Seconds",
+    subtitle: "W",
+    des: "Write your blog and share it with the world ",
+  };
+  // @ts-ignore
+  import PageHero from "$lib/PageHero.svelte";
+  import Stats from "../lib/Stats.svelte";
+  import Testimonial from "../lib/Testimonial.svelte";
+</script>
+
+<PageHero {tifu} />
+
+<Testimonial />
+
+<Stats />
