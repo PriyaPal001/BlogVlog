@@ -20,12 +20,12 @@
         }
     ]
 </script>
-<section class="text-gray-600 body-font">
+<section class="text-blue-900 body-font ">
     <div class="container px-5 py-5 md:py-24 mx-auto ">
       <div class="flex flex-wrap -m-4">
         {#each data as item}
         <div class="p-4 md:w-1/3 ">
-          <div class="h-full bg-gray-100 bg-opacity-75 py-4  md:px-10 md:py-10 overflow-hidden text-center relative border-gray-900 border-2 rounded-2xl">
+          <div class="h-full bg-green-200 bg-opacity-75 py-4  md:px-10 md:py-10 overflow-hidden text-center relative border-gray-900 border-2 rounded-2xl">
             <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-200" src={item.img}>
             <p class="leading-relaxed">{item.text}</p>
             <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>

@@ -79,7 +79,7 @@
             </p>
           </div>
   
-          <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+          <form action="#" class="mt-8 grid grid-cols-6 gap-6 border-2 border-blue-900 py-24 px-20 rounded-2xl">
             <div class="col-span-6 sm:col-span-3">
               <label
                 for="FirstName"
@@ -112,7 +112,7 @@
               />
             </div>
 
-            <div class="blogTitle">
+            <div class="blogTitle col-span-6 sm:col-span-3">
                 <label
                     for="blogTitle"
                     class="block text-sm font-medium text-gray-700"
@@ -128,7 +128,7 @@
                 />
             </div>
   
-            <div class="blogContent">
+            <div class="blogContent col-span-6 sm:col-span-6">
                 <label
                     for="blogContent"
                     class="block text-sm font-medium text-gray-700 "
@@ -136,18 +136,25 @@
                     Blog Content
                 </label>
     
-                <input
+                <!-- <input
                     type="text"
                     id="blogContent"
                     name="blog_content"
                     class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm "
-                />
+                /> -->
+                <textarea
+                    id="blogContent"
+                    name="blog_content"
+                    rows="4"
+                    cols="100"
+                    class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm "
+                ></textarea>
             </div>
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
               <button
                 class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
               >
-                Create an account
+                Post
               </button>
             </div>
           </form>
@@ -158,7 +165,7 @@
   
 
   <style>
-    input{
+    input,textarea{
         width: 100%;
         height: 40px;
         border:2px solid darkblue;

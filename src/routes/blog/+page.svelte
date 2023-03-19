@@ -70,7 +70,7 @@
           <h1
             class="sm:text-4xl text-2xl font-bold title-font mb-2 text-gray-900"
           >
-            <span class="text-blue-600">Students</span> Projects
+            <span class="text-blue-600">Blog</span> Collection
           </h1>
           <hr />
           <div class="h-[2px] w-full bg-[#0c2079] rounded-md" />
