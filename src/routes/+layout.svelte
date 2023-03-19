@@ -21,21 +21,21 @@
         }]
 </script>
 
-  <div class="navbar text-white bg-gray-900 sticky top-0 z-10 border-b-2 border-sky-400 hidden md:flex">
-    <div class="flex-1">
+  <div class="navbar text-white bg-gray-900 sticky top-0 z-10 border-b-2 border-[#80ed99] hidden md:flex ">
+    <div class="flex-1 ">
       <a class="btn btn-ghost normal-case text-xl" href="/">Blog</a>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         {#each navs as nav}
-        <li><a href={nav.link} class="btn btn-ghost">{nav.title}</a></li>
+        <li><a href={nav.link} class="btn btn-ghost mx-2 hover:border-[#80ed99]">{nav.title}</a></li>
         {/each} 
       </ul>
     </div>
   </div>
 
 
-  <div class="bg-white  sm:pt-16 lg:pt-24 fixed bottom-0 md:hidden w-full ">
+  <div class="bg-white  sm:pt-16 lg:pt-24 fixed bottom-0 md:hidden w-full  ">
     <!-- nav - start -->
     <nav class="sticky bottom-0 mx-auto flex w-full justify-between gap-8 border-t bg-white px-10 py-4 text-xs sm:max-w-md sm:rounded-t-xl sm:border-transparent sm:text-sm sm:shadow-2xl">
       <span class="flex flex-col items-center gap-1 text-indigo-500">
@@ -44,7 +44,7 @@
           <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
         </svg>
   
-        <span>Home</span>
+        <span >Home</span>
       </span>
   
       <a href="#" class="flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">

@@ -1,6 +1,6 @@
 <script>
   let tifu = {
-    title: "Publish Your Blog Wintin Few Seconds",
+    title: "Publish Your Blog ",
     subtitle: "W",
     des: "Write your blog and share it with the world ",
   };
