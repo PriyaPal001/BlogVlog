@@ -1,6 +1,6 @@
 <script>
   // @ts-nocheck
-
+  import { fufi } from "../../store";
   import supabase from "$lib/db";
   import { onMount } from "svelte";
 
@@ -77,11 +77,13 @@
     if (error) {
       console.log(error);
     } else {
+      $fufi=data;
+      console.log("bhai",$fufi);
       return data;
     }
   };
 
-  getData();
+  // getData();
 </script>
 
 <section class="text-gray-600 body-font ">
@@ -104,16 +106,15 @@
         <p>loading</p>
       {:then items}
         {#each items as item}
-          <div class="xl:w-1/4 md:w-1/4 px-3 py-7 w-96">
+        <div class="xl:w-1/4 md:w-1/4 px-3 py-7 w-96">
+          <a href="/blog/{item.route}">
             <div class=" p-6 rounded-lg  card_obj">
-              <a href="/blog/{item.route}">
                 <img
                   class="h-40 rounded w-full object-cover object-center mb-5"
                   src={item.image_url}
                   alt="content"
                 />
-              </a>
-              <h3
+                <h3
                 class="tracking-widest text-blue-500 font-semibold text-xs  font-mono title-font"
               >
                 {item.first_name + " " + item.last_name}
@@ -124,6 +125,7 @@
                 {item.blog_title}
               </h2>
             </div>
+          </a>
           </div>
         {/each}
       {:catch error}
