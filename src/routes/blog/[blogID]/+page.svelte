@@ -15,7 +15,8 @@
 
     <!-- svelte-ignore a11y-missing-attribute -->
     <a
-  class="relative block overflow-hidden rounded-xl bg-[url({fufiData.image_url})] bg-cover bg-center bg-no-repeat md:h-96 h-64 "
+    class="relative block overflow-hidden rounded-xl   md:h-96 h-64 popy"
+    style="background-image: url({fufiData.image_url});"
 >
   <div class="absolute inset-0 bg-black/25"></div>
 
@@ -47,7 +48,7 @@
       <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600&h=350" loading="lazy" alt="Photo by Minh Pham" class="h-full w-full object-cover object-center" />
     </div> -->
 
-    <h1 class="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6">{fufiData.blog_title}</h1>
+    <h1 class="mb-4 text-center text-2xl font-bold text-gray-800 mt-3  sm:text-4xl md:mb-6">{fufiData.blog_title}</h1>
 
     <p class="mb-6 text-gray-500 sm:text-lg md:mb-8">
       {fufiData.blog_content}
@@ -55,3 +56,17 @@
 
   </div>
 </div>
+
+<style>
+  .popy {
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @media (max-width: 640px) {
+    .popy {
+      height: 270px;
+    }
+  }
+</style>
