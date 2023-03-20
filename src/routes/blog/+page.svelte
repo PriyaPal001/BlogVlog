@@ -1,4 +1,10 @@
 <script>
+// @ts-nocheck
+
+  import supabase from "$lib/db";
+  import { onMount } from "svelte";
+
+
     let studProData = [
       {
         title: "Rahul Wagh",
@@ -61,61 +67,99 @@
         projName: "Monoco - Matic",
       },
     ];
-  </script>
-  
-  <section class="text-gray-600 body-font ">
-    <div class="container px-5 py-10 mx-auto">
-      <div class="flex flex-wrap w-full mb-10">
-        <div class=" w-full mb-6 lg:mb-0">
-          <h1
-            class="sm:text-4xl text-2xl font-bold title-font mb-2 text-gray-900"
-          >
-            <span class="text-blue-600">Blog</span> Collection
-          </h1>
-          <hr />
-          <div class="h-[2px] w-full bg-[#0c2079] rounded-md" />
-        </div>
-      </div>
-      <div
-        class="flex flex-wrap -m-4 border-2 border-slate-700 rounded-lg px-2 shadow-2xl justify-center shadow-sky-400"
-      >
-        {#each studProData as item}
-          <div class="xl:w-1/4 md:w-1/4 px-3 py-7 w-96">
-            <div class=" p-6 rounded-lg  card_obj">
-              <img
-                class="h-40 rounded w-full object-cover object-center mb-5"
-                src={item.img}
-                alt="content"
-              />
-              <h3
-                class="tracking-widest text-blue-500 font-semibold text-xs  font-mono title-font"
-              >
-                {item.title}
-              </h3>
-              <h2 class="text-lg text-gray-900 font-mono   title-font crd-title">
-                {item.projName}
-              </h2>
-            </div>
-          </div>
-        {/each}
+
+   /**
+   * @type {any[] | null}
+   */
+     $:blog_details =[];
+
+
+    onMount(async() => {
+      
+    let { data, error } = await supabase
+    .from('Blog')
+    .select('*')
+    blog_details = data;
+      console.log(data);
+    });
+    
+    $:console.log(blog_details);
+    $:len = blog_details.length;
+</script>
+
+<section class="text-gray-600 body-font ">
+  <div class="container px-5 py-10 mx-auto">
+    <div class="flex flex-wrap w-full mb-10">
+      <div class=" w-full mb-6 lg:mb-0">
+        <h1
+          class="sm:text-4xl text-2xl font-bold title-font mb-2 text-gray-900"
+        >
+          <span class="text-blue-600">Blog</span> Collection
+        </h1>
+        <hr />
+        <div class="h-[2px] w-full bg-[#0c2079] rounded-md" />
       </div>
     </div>
-  </section>
-  
-  <style>
-    .card_obj {
-      border: 2px solid black;
-      border-radius: 10px;
-      transition: all 0.3s ease;
-    }
-    .card_obj:hover {
-      background: #56c1f771;
-      transform: translate(-7px, -7px);
-      transition: all 0.3s ease;
-      box-shadow: 7px 7px 0px #001434;
-    }
-    .card_obj:hover .crd-title {
-      transition: all 0.3s ease;
-      color: rgb(5, 87, 209);
-    }
-  </style>
+    <div
+      class="flex flex-wrap -m-4 border-2 border-slate-700 rounded-lg px-2 shadow-2xl justify-center shadow-sky-400"
+    >
+    {#if len > 0}
+      {#each blog_details as item}
+        <div class="xl:w-1/4 md:w-1/4 px-3 py-7 w-96">
+          <div class=" p-6 rounded-lg  card_obj">
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-5"
+              src={item.image_url}
+              alt="content"
+            />
+            <h3
+              class="tracking-widest text-blue-500 font-semibold text-xs  font-mono title-font"
+            >
+              {item.first_name+" "+item.last_name}
+            </h3>
+            <h2 class="text-lg text-gray-900 font-mono   title-font crd-title">
+              {item.blog_title}
+            </h2>
+          </div>
+        </div>
+      {/each}
+      {:else}
+        <div class="xl:w-1/4 md:w-1/4 px-3 py-7 w-96">
+          <div class=" p-6 rounded-lg  card_obj">
+            <img
+              class="h-40 rounded w-full object-cover object-center mb-5"
+              src="https://i.pinimg.com/564x/63/6a/09/636a09d9c32d34f9b4037e1fac5db6cf.jpg"
+              alt="content"
+            />
+            <h3
+              class="tracking-widest text-blue-500 font-semibold text-xs  font-mono title-font"
+            >
+              Aditya Karle
+            </h3>
+            <h2 class="text-lg text-gray-900 font-mono   title-font crd-title">
+              City-Scape AR
+            </h2>
+          </div>
+        </div>
+      {/if}
+    </div>
+  </div>
+</section>
+
+<style>
+  .card_obj {
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .card_obj:hover {
+    background: #56c1f771;
+    transform: translate(-7px, -7px);
+    transition: all 0.3s ease;
+    box-shadow: 7px 7px 0px #001434;
+  }
+  .card_obj:hover .crd-title {
+    transition: all 0.3s ease;
+    color: rgb(5, 87, 209);
+  }
+</style>

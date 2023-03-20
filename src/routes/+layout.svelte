@@ -28,7 +28,7 @@
   class="navbar text-white bg-gray-900 sticky top-0 z-10 border-b-2 border-[#80ed99] hidden md:flex "
 >
   <div class="flex-1 ">
-    <a class="btn btn-ghost normal-case text-xl" href="/">Blog</a>
+    <a class="btn btn-ghost normal-case text-xl" href="/">BlogVlog</a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
@@ -45,12 +45,16 @@
   </div>
 </div>
 
-<div class="bg-white  sm:pt-16 lg:pt-24 fixed bottom-0 md:hidden w-full  ">
+<div class="bg-white  sm:pt-16 lg:pt-24 fixed bottom-0 md:hidden w-full z-10 ">
   <!-- nav - start -->
   <nav
     class="sticky bottom-0 mx-auto flex w-full justify-between gap-8 border-t bg-white px-10 py-4 text-xs sm:max-w-md sm:rounded-t-xl sm:border-transparent sm:text-sm sm:shadow-2xl"
   >
     <span class="flex flex-col items-center gap-1 text-indigo-500">
+      <a
+      href="/"
+      class="flex flex-col items-center gap-1  transition duration-100 {RouteID === '/' ? 'text-green-600' : 'text-gray-400'} "
+    >
       <svg
         class="h-6 w-6"
         xmlns="http://www.w3.org/2000/svg"
@@ -66,11 +70,13 @@
       </svg>
 
       <span>Home</span>
+    </a>
     </span>
 
+
     <a
-      href="#"
-      class="flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+      href="/blog"
+      class="flex flex-col items-center gap-1  transition duration-100 {RouteID === '/blog' ? 'text-green-600' : 'text-gray-400'} "
     >
       <svg
         class="h-6 w-6"
@@ -85,12 +91,12 @@
         />
       </svg>
 
-      <span>Features</span>
+      <span>Blogs</span>
     </a>
 
     <a
-      href="#"
-      class="flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+      href="/upload"
+      class="flex flex-col items-center gap-1  transition duration-100 {RouteID === '/upload' ? 'text-green-600' : 'text-gray-400'} "
     >
       <svg
         class="h-6 w-6"
@@ -108,10 +114,10 @@
         />
       </svg>
 
-      <span>Pricing</span>
+      <span>Upload</span>
     </a>
 
-    <a
+    <!-- <a
       href="#"
       class="flex flex-col items-center gap-1 text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
     >
@@ -129,7 +135,7 @@
       </svg>
 
       <span>About</span>
-    </a>
+    </a> -->
   </nav>
   <!-- nav - end -->
 </div>

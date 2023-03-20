@@ -1,4 +1,13 @@
-<section class="text-gray-600 body-font">
+<section
+  class="text-gray-600 body-font"
+  data-aos="zoom-in-up"
+  data-aos-offset="200"
+  data-aos-delay="50"
+  data-aos-duration="500"
+  data-aos-easing="ease-in-out"
+  data-aos-mirror="true"
+  data-aos-once="false"
+>
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
       <h1
