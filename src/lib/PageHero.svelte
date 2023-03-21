@@ -49,7 +49,7 @@
         >
       </a>
       <a
-        href="#"
+        href="/blog"
         class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border-2 border-[#80ed99]  rounded-lg hover:bg-sky-400   dark:text-white  dark:hover:bg-[#80ed99] dark:focus:ring-gray-800 hover:text-gray-900"
       >
         Blogs
