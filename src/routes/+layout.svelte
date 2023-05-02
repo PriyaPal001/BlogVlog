@@ -10,11 +10,11 @@
     },
     {
       title: "Blog",
-      link: "/blog",
+      link: "/",
     },
     {
       title: "Upload",
-      link: "/upload",
+      link: "/",
     },
   ];
   $: RouteID = $page.route.id;
